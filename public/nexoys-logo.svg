@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 515 110" role="img" aria-labelledby="nexoysLogoTitle">
+  <title id="nexoysLogoTitle">Nexoys</title>
+  <defs>
+    <linearGradient id="nexoysOrbitGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dfb142"/>
+      <stop offset="50%" stop-color="#f8df90"/>
+      <stop offset="100%" stop-color="#cfa035"/>
+    </linearGradient>
+    <linearGradient id="nexoysLetterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#edf0f5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Stylized N with Orbital Swoosh -->
+  <g transform="translate(6, 5)">
+    <!-- Back upper orbital curve behind N -->
+    <path d="M 48 31 C 78 13, 114 5, 126 15 C 133 21, 127 33, 112 45" fill="none" stroke="url(#nexoysOrbitGrad)" stroke-width="8.5" stroke-linecap="round"/>
+    <!-- Left vertical + diagonal of N -->
+    <path d="M 24 88 V 15 L 84 65 V 15 H 100 V 88 L 40 38 V 88 Z" fill="url(#nexoysLetterGrad)"/>
+    <!-- Small gold triangle accent in upper right inner notch of N -->
+    <polygon points="68,20 79,20 79,41" fill="url(#nexoysOrbitGrad)"/>
+    <!-- Front sweeping gold swoosh rising from bottom-left across N to upper-right -->
+    <path d="M 23 64 C 8 76, 4 86, 11 91 C 21 97, 56 80, 91 56 C 117 38, 132 21, 126 15" fill="none" stroke="url(#nexoysOrbitGrad)" stroke-width="9" stroke-linecap="round"/>
+  </g>
+
+  <!-- EXOYS sleek geometric lettering -->
+  <g fill="url(#nexoysLetterGrad)" transform="translate(148, 28)">
+    <!-- E -->
+    <path d="M 0 0 H 54 V 11 H 13 V 22 H 48 V 33 H 13 V 45 H 54 V 56 H 0 Z"/>
+    <!-- X -->
+    <path d="M 65 0 H 81 L 98 20 L 115 0 H 131 L 106 28 L 132 56 H 116 L 98 36 L 80 56 H 64 L 90 28 Z"/>
+    <!-- O -->
+    <path d="M 143 17 C 143 6, 151 0, 165 0 H 191 C 205 0, 213 6, 213 17 V 39 C 213 50, 205 56, 191 56 H 165 C 151 56, 143 50, 143 39 Z M 156 18 V 38 C 156 43, 159 45, 166 45 H 190 C 197 45, 200 43, 200 38 V 18 C 200 13, 197 11, 190 11 H 166 C 159 11, 156 13, 156 18 Z"/>
+    <!-- Y -->
+    <path d="M 222 0 H 238 L 256 23 L 274 0 H 290 L 263 34 V 56 H 249 V 34 Z"/>
+    <!-- S -->
+    <path d="M 299 41 H 312 C 312 44, 315 46, 321 46 H 341 C 347 46, 350 44, 350 39 C 350 35, 347 33, 340 33 H 318 C 305 33, 299 28, 299 17 C 299 6, 306 0, 320 0 H 342 C 355 0, 362 5, 362 15 H 349 C 349 12, 346 10, 340 10 H 321 C 315 10, 312 12, 312 16 C 312 20, 315 22, 322 22 H 344 C 357 22, 364 27, 364 39 C 364 50, 356 56, 342 56 H 320 C 306 56, 299 51, 299 41 Z"/>
+  </g>
+</svg>

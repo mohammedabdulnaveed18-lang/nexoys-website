@@ -1,0 +1,374 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Nexoys design system
+ * Brand: deep navy + sprint gold (from the logo), ivory paper surfaces.
+ * Display: DM Serif Display. Body: Manrope. Labels: JetBrains Mono.
+ */
+
+@theme inline {
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand tokens */
+  --color-night: var(--night);
+  --color-night-2: var(--night-2);
+  --color-night-foreground: var(--night-foreground);
+  --color-night-muted: var(--night-muted);
+  --color-night-border: var(--night-border);
+  --color-gold: var(--gold);
+  --color-gold-glow: var(--gold-glow);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-ivory: var(--ivory);
+  --color-sky: var(--sky);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+}
+
+:root {
+  --radius: 1rem;
+
+  --night: oklch(0.17 0.055 264);
+  --night-2: oklch(0.23 0.08 264);
+  --night-foreground: oklch(0.97 0.01 85);
+  --night-muted: oklch(0.74 0.03 260);
+  --night-border: oklch(1 0 0 / 12%);
+  --gold: oklch(0.81 0.155 78);
+  --gold-glow: oklch(0.88 0.13 90);
+  --gold-foreground: oklch(0.17 0.055 264);
+  --ivory: oklch(0.975 0.012 85);
+  --sky: oklch(0.72 0.12 245);
+  --danger: oklch(0.74 0.16 28);
+  --success: oklch(0.78 0.15 155);
+
+  --background: var(--ivory);
+  --foreground: oklch(0.2 0.06 264);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.06 264);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.06 264);
+  --primary: oklch(0.27 0.1 264);
+  --primary-foreground: oklch(0.975 0.012 85);
+  --secondary: oklch(0.94 0.02 85);
+  --secondary-foreground: oklch(0.2 0.06 264);
+  --muted: oklch(0.94 0.015 85);
+  --muted-foreground: oklch(0.47 0.04 262);
+  --accent: var(--gold);
+  --accent-foreground: var(--gold-foreground);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.88 0.02 85);
+  --input: oklch(0.88 0.02 85);
+  --ring: var(--gold);
+  --chart-1: var(--gold);
+  --chart-2: oklch(0.27 0.1 264);
+  --chart-3: var(--sky);
+  --chart-4: oklch(0.6 0.1 200);
+  --chart-5: oklch(0.7 0.1 40);
+  --sidebar: var(--night);
+  --sidebar-foreground: var(--night-foreground);
+  --sidebar-primary: var(--gold);
+  --sidebar-primary-foreground: var(--gold-foreground);
+  --sidebar-accent: var(--night-2);
+  --sidebar-accent-foreground: var(--night-foreground);
+  --sidebar-border: var(--night-border);
+  --sidebar-ring: var(--gold);
+
+  --gradient-gold: linear-gradient(120deg, var(--gold) 0%, var(--gold-glow) 50%, var(--gold) 100%);
+  --gradient-night: radial-gradient(ellipse at 20% 0%, oklch(0.3 0.12 264) 0%, var(--night) 55%);
+  --gradient-veil: linear-gradient(180deg, oklch(0.17 0.055 264 / 0.2) 0%, oklch(0.17 0.055 264 / 0.92) 100%);
+  --shadow-gold: 0 20px 60px -20px color-mix(in oklab, var(--gold) 60%, transparent);
+  --shadow-elegant: 0 30px 80px -30px color-mix(in oklab, var(--night) 55%, transparent);
+  --ease-cinema: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  section[id], [id].scroll-target {
+    scroll-margin-top: 6rem;
+  }
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background: var(--gold);
+    color: var(--gold-foreground);
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ---------- Utilities ---------- */
+
+@utility text-gradient-gold {
+  background: var(--gradient-gold);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@utility bg-gradient-gold {
+  background: var(--gradient-gold);
+  background-size: 200% auto;
+}
+
+@utility bg-gradient-night {
+  background: var(--gradient-night);
+}
+
+@utility bg-veil {
+  background: var(--gradient-veil);
+}
+
+@utility shadow-gold {
+  box-shadow: var(--shadow-gold);
+}
+
+@utility shadow-elegant {
+  box-shadow: var(--shadow-elegant);
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* Animated blueprint grid for tech surfaces */
+@utility bg-tech-grid {
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--sky) 14%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--sky) 14%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+  animation: grid-pan 24s linear infinite;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+/* Soft paper dots for career surfaces */
+@utility bg-paper-dots {
+  background-image: radial-gradient(color-mix(in oklab, var(--primary) 14%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@utility glass-night {
+  background: color-mix(in oklab, var(--night) 55%, transparent);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--night-border);
+}
+
+@utility glass-light {
+  background: color-mix(in oklab, var(--ivory) 72%, transparent);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--primary) 10%, transparent);
+}
+
+/* ---------- Form controls (dark glass surfaces) ---------- */
+@utility field-control {
+  width: 100%;
+  border-radius: 0.875rem;
+  border: 1px solid var(--night-border);
+  background: color-mix(in oklab, var(--night-2) 45%, transparent);
+  color: var(--night-foreground);
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  outline: none;
+  transition: border-color 0.3s var(--ease-cinema), background-color 0.3s var(--ease-cinema), box-shadow 0.3s var(--ease-cinema);
+  &::placeholder {
+    color: color-mix(in oklab, var(--night-muted) 65%, transparent);
+  }
+  &:hover {
+    border-color: color-mix(in oklab, var(--gold) 35%, var(--night-border));
+  }
+  &:focus {
+    border-color: var(--gold);
+    background: color-mix(in oklab, var(--night-2) 75%, transparent);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--gold) 16%, transparent);
+  }
+  &[aria-invalid="true"] {
+    border-color: var(--danger);
+  }
+  & option {
+    background: var(--night);
+    color: var(--night-foreground);
+  }
+}
+
+@utility field-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--night-foreground);
+}
+
+@utility section-y {
+  padding-block: 4.5rem;
+  @media (min-width: 768px) {
+    padding-block: 6rem;
+  }
+}
+
+/* Bottom-to-top navy reveal on service cards */
+@utility reveal-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: color 0.5s var(--ease-cinema), transform 0.5s var(--ease-cinema), box-shadow 0.5s var(--ease-cinema);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--gradient-night);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.6s var(--ease-cinema);
+  }
+  &:hover {
+    color: var(--night-foreground);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-elegant);
+  }
+  &:hover::before {
+    transform: scaleY(1);
+  }
+}
+
+@utility marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+@utility marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee 36s linear infinite reverse;
+}
+
+@utility animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@utility animate-float-slow {
+  animation: float 9s ease-in-out infinite;
+}
+
+@utility animate-spin-slow {
+  animation: spin 22s linear infinite;
+}
+
+@utility animate-glow {
+  animation: glow 5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes grid-pan {
+  from { background-position: 0 0; }
+  to { background-position: 64px 64px; }
+}
+@keyframes glow {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Home hero: keeps copy legible on the left while the photo's subjects stay visible */
+@utility bg-veil-hero {
+  background:
+    linear-gradient(180deg, oklch(0.17 0.055 264 / 0.55) 0%, transparent 25%, transparent 60%, var(--night) 100%);
+  @media (min-width: 1024px) {
+    background:
+      linear-gradient(90deg, oklch(0.17 0.055 264 / 0.92) 0%, oklch(0.17 0.055 264 / 0.7) 32%, oklch(0.17 0.055 264 / 0.15) 60%, transparent 80%),
+      linear-gradient(180deg, oklch(0.17 0.055 264 / 0.55) 0%, transparent 20%, transparent 80%, oklch(0.17 0.055 264 / 0.6) 100%);
+  }
+}
